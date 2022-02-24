@@ -11,7 +11,7 @@ using PremierLeague.EntityModels;
 namespace PremierLeague.EntityModels.Migrations
 {
     [DbContext(typeof(PremierLeagueContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    partial class PremierLeagueContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -31,6 +31,7 @@ namespace PremierLeague.EntityModels.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PlayerId"), 1L, 1);
 
                     b.Property<DateTime?>("BirthDate")
+                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ClubName")
@@ -41,8 +42,8 @@ namespace PremierLeague.EntityModels.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("JerseyNumber")
-                        .HasColumnType("int");
+                    b.Property<long>("JerseyNumber")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("LastName")
                         .IsRequired()

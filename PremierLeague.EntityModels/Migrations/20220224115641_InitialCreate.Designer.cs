@@ -12,8 +12,8 @@ using PremierLeague.EntityModels;
 namespace PremierLeague.EntityModels.Migrations
 {
     [DbContext(typeof(PremierLeagueContext))]
-    [Migration("20220223230708_CreateInitial")]
-    partial class CreateInitial
+    [Migration("20220224115641_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,6 +33,7 @@ namespace PremierLeague.EntityModels.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PlayerId"), 1L, 1);
 
                     b.Property<DateTime?>("BirthDate")
+                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ClubName")
@@ -43,8 +44,8 @@ namespace PremierLeague.EntityModels.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("JerseyNumber")
-                        .HasColumnType("int");
+                    b.Property<long>("JerseyNumber")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("LastName")
                         .IsRequired()
