@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "93f04f41-cfee-4c53-a41e-1085ee62fca2": {
+      "ProjectGuid": "93f04f41-cfee-4c53-a41e-1085ee62fca2",
+      "DisplayName": "PremierLeague",
+      "ColorIndex": 0
+    },
+    "dbe4f89b-d08d-44af-9430-d9e98685d982": {
+      "ProjectGuid": "dbe4f89b-d08d-44af-9430-d9e98685d982",
+      "DisplayName": "PremierLeague.EntityModels",
+      "ColorIndex": 1
+    },
+    "0a4fb92b-9ed9-4c3f-889f-1549e200f06f": {
+      "ProjectGuid": "0a4fb92b-9ed9-4c3f-889f-1549e200f06f",
+      "DisplayName": "PremierLeague.EntityModels",
+      "ColorIndex": 2
+    },
+    "d3d53408-07d4-4dba-9c0f-50a862b4db5e": {
+      "ProjectGuid": "d3d53408-07d4-4dba-9c0f-50a862b4db5e",
+      "DisplayName": "PremierLeague.DataContext",
+      "ColorIndex": 3
+    },
+    "3b9cac0b-5e6c-45c8-8c50-21ce06b1d851": {
+      "ProjectGuid": "3b9cac0b-5e6c-45c8-8c50-21ce06b1d851",
+      "DisplayName": "PremierLeague.DataContext",
+      "ColorIndex": 4
+    }
+  },
+  "NextColorIndex": 5
+}
