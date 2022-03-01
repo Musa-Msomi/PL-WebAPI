@@ -1,13 +1,8 @@
-﻿#nullable disable
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using PremierLeague;
-using PremierLeague.EntityModels;
+using PremierLeague.EntityModels.Commands;
+using PremierLeague.EntityModels.Queries;
 
 namespace PremierLeague.Controllers
 {
@@ -15,97 +10,55 @@ namespace PremierLeague.Controllers
     [ApiController]
     public class PlayersController : ControllerBase
     {
-       
-        private readonly PremierLeagueContext _context;
-
-        public PlayersController(PremierLeagueContext context)
+        private readonly IMediator _mediator;
+        public PlayersController(IMediator mediator)
         {
-            _context = context;
-        }
-
-        
-        [HttpGet]
-        [ProducesResponseType(200,Type = typeof(IEnumerable<Player>))]
-        public async Task<ActionResult<IEnumerable<Player>>> GetPlayers()
-        {
-            return await _context.Players.ToListAsync();
-        }
-
-        
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Player>> GetPlayer(int id)
-        {
-            var player = await _context.Players.FindAsync(id);
-
-            if (player == null)
-            {
-                return NotFound($"Player with id: {id} not found.");
-            }
-
-            return player;
-        }
-
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutPlayer(int id, Player player)
-        {
-            if (id != player.PlayerId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(player).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!PlayerExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            _mediator = mediator;
         }
 
         [HttpPost]
-        public async Task<ActionResult<Player>> PostPlayer(Player player)
+        public async Task<IActionResult> Post(CreatePlayerCommand addPlayer)
         {
-            _context.Players.Add(player);
-            await _context.SaveChangesAsync();
-
-           // return CreatedAtAction("GetPlayer", new { id = player.PlayerId }, player);
+            await _mediator.Send(addPlayer);
             return NoContent();
         }
 
-        // DELETE: api/Players/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePlayer(int id)
+        [HttpGet]
+        public  async Task<IActionResult> Get()
         {
-            var player = await _context.Players.FindAsync(id);
-            if (player == null)
+           var players =  await _mediator.Send(new GetAllPlayersQuery());
+
+            return Ok(players);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var player = await _mediator.Send(new GetPlayerByIdQuery { Id = id });
+
+            return Ok(player);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, UpdatePlayerCommand updatePlayer)
+        {
+            if(id != updatePlayer.PlayerId)
             {
-                return NotFound();
+                return BadRequest();
             }
+            
+            await _mediator.Send(updatePlayer);
 
-            _context.Players.Remove(player);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
+            return Ok();
+            
         }
 
-   
-   
-
-        private bool PlayerExists(int id)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
         {
-            return _context.Players.Any(e => e.PlayerId == id);
+
+            return Ok(await _mediator.Send(new DeletePlayerCommand { Id = id}));
         }
+
     }
 }

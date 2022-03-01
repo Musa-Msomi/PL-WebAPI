@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "i6pyiNH6JprHjYAgUs15jsOyPbgenbg+HEDuCHPQ6l9GcWbzl2O3UzQ6TXkskDuGks5bF1YOWdbCmxtT4yIOCQ==",
+  "dgSpecHash": "Z9m7t8PNDtGA2asxUSvv0JAGTQT+tLvC4vrNYdpvNkdmW+OFVz8r2LqcS80w50pxbNiR3G9QvjMEtNwg9dZWuA==",
   "success": true,
   "projectFilePath": "C:\\Users\\mmsomi2\\source\\repos\\PremierLeague\\PremierLeague\\PremierLeague.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mmsomi2\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\mmsomi2\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
+    "C:\\Users\\mmsomi2\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\mmsomi2\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\10.0.1\\mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
     "C:\\Users\\mmsomi2\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\mmsomi2\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\mmsomi2\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",

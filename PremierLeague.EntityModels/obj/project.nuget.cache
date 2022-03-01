@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "fR5o/5XDeQvOitC6/dMpIpQ4euWLEZ4qxwYZvEUc8esgiCXlpnOIk1t8ACCDKSC/oaVdqrUKaVu8novlRT4TXA==",
+  "dgSpecHash": "gcGvsv3XbbFOgmM4tqNlZ/lyqOU7ZSyyLh7/2A3+TRJZ1kP7+0W8WktTcnbBaop5pdvqioWUGW8W/gPCGVbufw==",
   "success": true,
   "projectFilePath": "C:\\Users\\mmsomi2\\source\\repos\\PremierLeague\\PremierLeague.EntityModels\\PremierLeague.EntityModels.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mmsomi2\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\mmsomi2\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
+    "C:\\Users\\mmsomi2\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\mmsomi2\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\10.0.1\\mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
     "C:\\Users\\mmsomi2\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\mmsomi2\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
     "C:\\Users\\mmsomi2\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.2.0\\microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",
