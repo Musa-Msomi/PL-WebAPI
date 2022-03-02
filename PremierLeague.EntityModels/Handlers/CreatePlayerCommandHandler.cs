@@ -29,6 +29,7 @@ namespace PremierLeague.EntityModels.Handlers
                 ClubName = request.ClubName
             };
 
+            
             context.Players.Add(player);
 
             await  context.SaveChangesAsync();

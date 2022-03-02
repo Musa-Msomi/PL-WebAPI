@@ -26,7 +26,8 @@ namespace PremierLeague.Controllers
         [HttpGet]
         public  async Task<IActionResult> Get()
         {
-           var players =  await _mediator.Send(new GetAllPlayersQuery());
+           var query = new GetAllPlayersQuery();
+           var players =  await _mediator.Send(query);
 
             return Ok(players);
         }
@@ -34,7 +35,10 @@ namespace PremierLeague.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var player = await _mediator.Send(new GetPlayerByIdQuery { Id = id });
+
+            GetPlayerByIdQuery request = new GetPlayerByIdQuery { Id = id };
+            
+            var player = await _mediator.Send(request);
 
             return Ok(player);
         }
@@ -56,8 +60,8 @@ namespace PremierLeague.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-
-            return Ok(await _mediator.Send(new DeletePlayerCommand { Id = id}));
+            var deleteQuery = new DeletePlayerCommand { Id = id };
+            return Ok(await _mediator.Send(deleteQuery));
         }
 
     }

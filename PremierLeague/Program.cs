@@ -19,10 +19,8 @@ builder.Services.AddDbContext<PremierLeagueContext>((DbContextOptionsBuilder opt
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddMediatR(typeof(GetAllPlayersQueryHandler).Assembly);
-builder.Services.AddMediatR(typeof(GetPlayerByIdQueryHandler).Assembly);
-builder.Services.AddMediatR(typeof(CreatePlayerCommandHandler).Assembly);
-builder.Services.AddMediatR(typeof(UpdatePlayerCommandHandler).Assembly);
-builder.Services.AddMediatR(typeof(DeletePlayerCommandHandler).Assembly);
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
