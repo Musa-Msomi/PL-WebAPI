@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PremierLeague", "PremierLeague\PremierLeague.csproj", "{93F04F41-CFEE-4C53-A41E-1085EE62FCA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PremierLeague.EntityModels", "PremierLeague.EntityModels\PremierLeague.EntityModels.csproj", "{0A4FB92B-9ED9-4C3F-889F-1549E200F06F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PremierLeague.EntityModels", "PremierLeague.EntityModels\PremierLeague.EntityModels.csproj", "{0A4FB92B-9ED9-4C3F-889F-1549E200F06F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

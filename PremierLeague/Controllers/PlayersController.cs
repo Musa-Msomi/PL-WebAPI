@@ -20,7 +20,7 @@ namespace PremierLeague.Controllers
         public async Task<IActionResult> Post(CreatePlayerCommand addPlayer)
         {
             await _mediator.Send(addPlayer);
-            return NoContent();
+            return StatusCode(201);
         }
 
         [HttpGet]
@@ -32,7 +32,7 @@ namespace PremierLeague.Controllers
             return Ok(players);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("GetPlayerById/{id}")]
         public async Task<IActionResult> GetById(int id)
         {
 
@@ -40,24 +40,34 @@ namespace PremierLeague.Controllers
             
             var player = await _mediator.Send(request);
 
+            if (player == null)
+            {
+                return NotFound();
+            
+            }
+
             return Ok(player);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("UpdatePlayerById/{id}")]
         public async Task<IActionResult> Put(int id, UpdatePlayerCommand updatePlayer)
         {
+           
             if(id != updatePlayer.PlayerId)
             {
                 return BadRequest();
             }
-            
-            await _mediator.Send(updatePlayer);
+
+            var updatedPlayer = await _mediator.Send(updatePlayer);
+
+            if (updatedPlayer == null)
+                return NotFound();
 
             return Ok();
-            
+
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("DeletePlayerById/{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var deleteQuery = new DeletePlayerCommand { Id = id };

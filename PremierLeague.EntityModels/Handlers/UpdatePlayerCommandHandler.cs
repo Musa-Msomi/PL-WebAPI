@@ -23,7 +23,7 @@ namespace PremierLeague.EntityModels.Handlers
 
             if (player == null)
             {
-                return default;
+                return null;
             }
             else
             {
@@ -38,6 +38,9 @@ namespace PremierLeague.EntityModels.Handlers
 
                 return player;
             }
+
+
+
         }
     }
 }
