@@ -1,11 +1,14 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PremierLeague.EntityModels.Commands;
+using PremierLeague.EntityModels.Models;
 using PremierLeague.EntityModels.Queries;
 
 namespace PremierLeague.Controllers
 {
+    [Authorize(Roles = UserRoles.Admin)]
     [Route("api/[controller]")]
     [ApiController]
     public class PlayersController : ControllerBase

@@ -30,7 +30,12 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
+    },
+    "c708eaae-a374-4e08-b23a-10d932c9d128": {
+      "ProjectGuid": "c708eaae-a374-4e08-b23a-10d932c9d128",
+      "DisplayName": "Contracts",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 5
+  "NextColorIndex": 6
 }
