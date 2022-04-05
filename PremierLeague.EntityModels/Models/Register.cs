@@ -15,7 +15,8 @@ namespace PremierLeague.EntityModels.Models
         [Required]
         public string? Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Password must contain an uppercase letter,number and special character")]
+        
         public string? Password { get; set; }
     }
 }
