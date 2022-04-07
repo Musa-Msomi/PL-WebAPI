@@ -23,6 +23,8 @@ namespace PremierLeague
         [Required(ErrorMessage ="Club name is required")]
         public string ClubName { get; set; } = string.Empty;
 
+        public bool IsDeleted { get; set; }
+
         //public Club Club { get; set; } = null!;
     }
 }

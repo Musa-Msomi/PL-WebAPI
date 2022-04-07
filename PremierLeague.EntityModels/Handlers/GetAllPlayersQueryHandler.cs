@@ -20,7 +20,7 @@ namespace PremierLeague.EntityModels.Handlers
 
         public async Task<IEnumerable<Player>> Handle(GetAllPlayersQuery request, CancellationToken cancellationToken)
         {
-            var players = await _context.Players.ToListAsync();
+            var players = await _context.Players.Where(b => !b.IsDeleted).ToListAsync();
             return players;
         }
     }
